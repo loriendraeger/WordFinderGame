@@ -29,3 +29,9 @@ WordFinderPlayer consumes the board as a directed graph. The board itself is exp
 Each piece on the board is used as a beginning of a depth first search of the graph looking for words. As pieces are encountered, they are pushed onto the stack. Then the contents of the stack are checked against the WordListChecker. If the contents of the stack are a word, it's added to the result set. If the contents of the stack are the beginning of other words, its adjacent pieces are checked recursively.
 
 Boggle does not allow looping back to previous pieces to form a word, so the stack (an ArrayDeque in my implementation) is always checked to see if the current piece is already there. This means that the WordFinderPiece objects must either implement .equals or the board setup must ensure the same piece is never duplicated in memory. The RectangularWordFinderBoard only holds one reference to each piece and DoubleDiamondBoard holds duplicate references for its adjacency list, so the default Object.equals implementation works fine.
+
+## Why?
+
+I was bored with Netflix. Also at work I use C# and Typescript, so I wanted to give Java a try again.
+
+Have feedback? Add an issue.
